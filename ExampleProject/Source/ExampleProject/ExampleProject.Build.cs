@@ -12,6 +12,9 @@ public class ExampleProject : ModuleRules
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
+		// Use gRPC module
+		PublicDependencyModuleNames.Add("gRPCForUE4");
+
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 		
