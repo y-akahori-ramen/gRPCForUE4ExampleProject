@@ -1,0 +1,4 @@
+[submodule "ExampleProject/Plugins/gRPCForUE4"]
+	path = ExampleProject/Plugins/gRPCForUE4
+	url = https://github.com/y-akahori-ramen/gRPCForUE4.git
+	branch = develop
