@@ -17,19 +17,15 @@ Windowsのみ対応。
 
 ## 環境準備
 
-コード取得
+### コード取得
 ```
 git clone https://github.com/y-akahori-ramen/gRPCForUE4ExampleProject.git
 cd gRPCForUE4ExampleProject
 git submodule update --init
 ```
 
-環境構築をするためにUEのルートディレクトリとCMakeで使用するジェネレーターを環境変数に設定してsetup.batを呼び出す。
-```
-set UE_ROOT=YOUR_UNREAL_ENGINE_ROOT
-set CMAKE_GENERATOR=Visual Studio 17 2022
-.\setup.bat
-```
+### setup.bat実行
+環境構築をするためにUEのルートディレクトリとCMakeで使用するジェネレーターを環境変数に設定して[setup.bat](./setup.bat)を呼び出す。
 UE4.27とVS2022で実行する例として [setupExampleVS2022UE427.bat](./setupExampleVS2022UE427.bat) がある。
 
 ## 実行
