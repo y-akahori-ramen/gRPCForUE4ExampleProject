@@ -8,7 +8,7 @@ set GRPC_EXAMPLE_NAME=helloworld
 
 echo "Setup gRPC Plugin"
 setlocal
-.\ExampleProject\Plugins\gRPCForUE4\Setup\setup.bat
+call .\ExampleProject\Plugins\gRPCForUE4\Setup\setup.bat
 endlocal
 
 echo "Generate example proto c++ source"
