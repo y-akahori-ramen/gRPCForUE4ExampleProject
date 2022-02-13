@@ -1,15 +1,15 @@
 @echo off
 pushd %~dp0
 
+setlocal
+set GRPC_ROOT=%~dp0\ExampleProject\Plugins\gRPCForUE4\Setup\grpcsrc\grpc
+set GRPC_EXAMPLE_PROTO_DIR=%GRPC_ROOT%\examples\protos
+set GRPC_EXAMPLE_NAME=helloworld
 
 echo "Setup gRPC Plugin"
 setlocal
 .\ExampleProject\Plugins\gRPCForUE4\Setup\setup.bat
 endlocal
-
-set GRPC_ROOT=%~dp0\ExampleProject\Plugins\gRPCForUE4\Setup\grpcsrc\grpc
-set GRPC_EXAMPLE_PROTO_DIR=%GRPC_ROOT%\examples\protos
-set GRPC_EXAMPLE_NAME=helloworld
 
 echo "Generate example proto c++ source"
 setlocal
@@ -33,8 +33,13 @@ setlocal
 cd %~dp0\pythonEnv
 set GRPC_EXAMPLE_PYTHON_DIR=%GRPC_ROOT%\examples\python
 python -m venv .venv
-.venv\Scripts\activate.bat & python -m pip install --upgrade pip & python -m pip install grpcio & python -m pip install grpcio-tools
+
+set PYTHON_EXE=.\.venv\Scripts\python.exe
+%PYTHON_EXE% -m pip install --upgrade pip
+%PYTHON_EXE% -m pip install grpcio 
+%PYTHON_EXE% -m pip install grpcio-tools
 robocopy %GRPC_EXAMPLE_PYTHON_DIR%\%GRPC_EXAMPLE_NAME% .
 endlocal
 
+endlocal
 popd
