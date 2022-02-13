@@ -40,3 +40,5 @@ runExampleServer.bat
 ExampleProjectフォルダ内にVisualStudioのソリューションファイルが生成されるため開いて実行する。  
 UnrealEngineでPlayInを行い、コンソールコマンド"SayHello"を実行する。  
 ※SayHelloコンソールコマンドは前述の操作で立てたサーバに通信を行いレスポンス結果を画面上に出力する内容となっている。
+
+![](./docImage/gRPCExampleImage.gif)
