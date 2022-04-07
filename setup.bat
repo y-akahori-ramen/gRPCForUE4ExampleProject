@@ -1,6 +1,9 @@
 @echo off
 pushd %~dp0
 
+echo "Clone gRPC Plugin"
+git submodule update --init
+
 setlocal
 set GRPC_ROOT=%~dp0\ExampleProject\Plugins\gRPCForUE4\Setup\grpcsrc\grpc
 set GRPC_EXAMPLE_PROTO_DIR=%GRPC_ROOT%\examples\protos
