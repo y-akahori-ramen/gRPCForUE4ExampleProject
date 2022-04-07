@@ -11,6 +11,7 @@ set GRPC_EXAMPLE_NAME=helloworld
 
 echo "Setup gRPC Plugin"
 setlocal
+set GRPC_BRANCH=v1.41.1
 call .\ExampleProject\Plugins\gRPCForUE4\Setup\setup.bat
 endlocal
 
