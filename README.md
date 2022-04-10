@@ -1,13 +1,8 @@
 # gRPCForUE4ExampleProject
-gRPCForUE4リポジトリを利用してUE4のプロジェクトでgRPCを使用する例
+Example of using [gRPCForUE plugin](https://github.com/y-akahori-ramen/gRPCForUE).
 
-## 概要
-UnrealEngine4でgRPCを利用するためのプラグイン[gRPCForUE4](https://github.com/y-akahori-ramen/gRPCForUE4)を実際のUnrealEngineのプロジェクトで使用する例  
-
-## 必要環境
-Windowsのみ対応。
-
-さらに以下が使える状態であること。
+## Requirements
+- Windows
 - [Visual Stduio](https://visualstudio.microsoft.com/)
 - [Git](https://git-scm.com/)
 - [CMake](https://cmake.org/download/)
@@ -15,27 +10,26 @@ Windowsのみ対応。
 - [python](https://www.python.org/)
 - [UnrealEngine](https://www.unrealengine.com/)
 
-## 環境準備
-
+## Setup
 ```
 git clone https://github.com/y-akahori-ramen/gRPCForUE4ExampleProject.git
 cd gRPCForUE4ExampleProject
-set UE_ROOT=C:\Program Files\Epic Games\UE_4.27
-set CMAKE_GENERATOR=Visual Studio 17 2022
+set UE_ROOT=Path to your unreal engine root. e.g. C:\Program Files\Epic Games\UE_4.27
+set CMAKE_GENERATOR=Set your build system. e.g. Visual Studio 17 2022
+set GRPC_BRANCH=gRPC version. e.g. v1.41.1
 call ./setup.bat
 ```
+Example
+-  [setupExampleVS2022UE427.bat](./setupExampleVS2022UE427.bat) 
 
-UE4.27とVS2022で実行する例
--  [setupExampleVS2022UE427.bat](./setupExampleVS2022UE427.bat) がある。
+## Run example gRPC server
 
-## 実行
-サンプル用のgRPCサーバーを以下のコマンドで実行する
 ```
 runExampleServer.bat
 ```
-
-ExampleProjectフォルダ内にVisualStudioのソリューションファイルが生成されるため開いて実行する。  
-UnrealEngineでPlayInを行い、コンソールコマンド"SayHello"を実行する。  
-※SayHelloコンソールコマンドは前述の操作で立てたサーバに通信を行いレスポンス結果を画面上に出力する内容となっている。
+## Send request to gRPC server in UnrealEngine 
+After run setup.bat, Visual studio solution file generated in ExampleProject folder, build and lanch example project.  
+Play in project and execute console command `SayHello`.  
+Command implementation at [SampleGRPCCommand.cpp](./ExampleProject/Source/ExampleProject/SampleGRPCCommand.cpp).
 
 ![](./docImage/gRPCExampleImage.gif)
